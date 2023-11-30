@@ -1,0 +1,20 @@
+pipeline{
+    agent any
+
+    stages {
+        stage('Clonar Repositorio') {
+            steps {
+                git branch: 'master', url: 'https://github.com/Camillasp/Automacao_UI_I.git'
+            }
+        }
+        stage('Instalar Dependencias e Executar Testes') {
+            steps {
+                //Instala as dependencias
+                bat 'npm install'
+                //Executa os testes
+                bat 'npx cypress run'
+            }
+        }
+
+    }
+}
