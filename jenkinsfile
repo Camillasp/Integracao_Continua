@@ -10,9 +10,9 @@ pipeline{
         stage('Instalar Dependencias e Executar Testes') {
             steps {
                 //Instala as dependencias
-                sh 'npm install'
+                bat 'npm install'
                 //Executa os testes
-                sh 'npx cypress run'
+                bat 'npx cypress run'
             }
         }
 
